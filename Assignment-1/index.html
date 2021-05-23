@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Assignment-1</title>
+</head>
+<body bgcolor="Red">
+<section align="center"><label for="string">Enter your string here:</label>
+<input id="string" type="text"></input>
+<button>Go</button><section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+<script>
+const btn=document.querySelector("button");
+btn.onclick=function(){
+var x;
+x=document.getElementById("string").value;
+var j;
+var d= new Date();
+var start=d.getTime();
+for(j=0;((sha256(x+j.toString()).toString(16))>="00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");j++);
+var e= new Date();
+end=e.getTime();
+var po=document.createElement('p');
+var po2=document.createElement('p');
+po2.innerHTML="The required integer is " + j.toString();
+po.innerHTML="The time taken is "+(end-start).toString()+" milliseconds";
+document.body.appendChild(po);
+document.body.appendChild(po2);}</script>
+</body>
+</html>
